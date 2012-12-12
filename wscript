@@ -13,12 +13,20 @@ def configure(ctx):
 def build(ctx):
     ctx(
         features="cxx cxxprogram",
-        name="pkg-ca",
+        name="app-pkg-ca",
         source="src/pkg-ca.cxx",
-        target="pkg-ca",
+        target="app-pkg-ca",
         use="ROOT pkg-aa pkg-ab",
         )
 
+    # use task-a -> b -> cxx
+    ctx(
+        features="cxx cxxshlib",
+        name="pkg-ca",
+        source="src/ca.in",
+        target="pkg-ca",
+        use="ROOT pkg-aa pkg-ab",
+        )
     return
 
 def install(ctx):
