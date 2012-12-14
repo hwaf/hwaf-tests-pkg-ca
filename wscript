@@ -27,6 +27,13 @@ def build(ctx):
         target="pkg-ca",
         use="ROOT pkg-aa pkg-ab",
         )
+
+    ctx(
+        features     = 'py',
+        name         = 'py-pkgca',
+        source       = 'python/pkgca.py',
+        install_path = '${INSTALL_AREA}/python',
+        )
     return
 
 def install(ctx):
