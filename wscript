@@ -8,6 +8,7 @@ def pkg_deps(ctx):
     return
 
 def configure(ctx):
+    ctx.load('find_python')
     ctx.find_python()
     return
 
