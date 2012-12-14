@@ -8,6 +8,7 @@ def pkg_deps(ctx):
     return
 
 def configure(ctx):
+    ctx.find_python()
     return
 
 def build(ctx):
